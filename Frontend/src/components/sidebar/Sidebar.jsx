@@ -12,7 +12,7 @@ const Sidebar = () => {
 		</div>
 	);
 };
-export default Sidebar;
+export default Sidebar;    
 
 // STARTER CODE SNIPPET
 // import Conversations from "./Conversations";
