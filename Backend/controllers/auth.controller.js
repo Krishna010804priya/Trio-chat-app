@@ -44,11 +44,9 @@ export const signup = async(req ,res) => {
                 username: newUser.username,
                 profilePic: newUser.profilePic,
             });
-        }
-        else{
+        } else{
             res.status(400).json({error: "Invalid user data"});
         }
-
     } catch (error) {
         console.log("Error in signup controller", error.message);
         res.status(500).json({error:"Internal Server Error"});
@@ -79,7 +77,7 @@ export const login = async (req ,res) => {
     }
 };
 
-export const logout = async (req ,res) => {
+export const logout =  (req ,res) => {
     try {
         res.cookie("jwt", "", { maxAge: 0 });
         res.status(200).json({ message: "Logged out successfully" });
