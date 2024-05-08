@@ -15,7 +15,7 @@ export const SocketContextProvider = ({ children }) => {
 
 	useEffect(() => {
 		if (authUser) {
-			const socket = io("https://trio-chat-app-1.onrender.com/", {
+			const socket = io("http://localhost:5000", {
 				query: {
 					userId: authUser._id,
 				},
@@ -28,7 +28,7 @@ export const SocketContextProvider = ({ children }) => {
 				setOnlineUsers(users);
 			});
 
-			return () => socket.close();
+			return () => socket.close();  
 		} else {
 			if (socket) {
 				socket.close();
